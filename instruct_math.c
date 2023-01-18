@@ -10,7 +10,7 @@
 void add(stack_t **stack, unsigned int nline)
 {
 
-stack_t *tmp;
+int tmp;
 
 if (stack == NULL || *stack == NULL || !((*stack)->next))
 {
