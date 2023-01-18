@@ -90,8 +90,8 @@ free(*stack);
  */
 void nop(stack_t **stack, unsigned int nline)
 {
-(void)stack;
-(void)nline;
+UNUSED(stack);
+UNUSED(nline);
 }
 
 /**
