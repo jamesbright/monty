@@ -19,7 +19,7 @@ exit(EXIT_FAILURE);
 }
 
 tmp = (*stack)->n;
-pop(stack, line_number);
+pop(stack, nline);
 (*stack)->n += tmp;
 }
 
