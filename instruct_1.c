@@ -48,7 +48,7 @@ if (*stack)
 void pall(stack_t **stack, unsigned int nline)
 {
 stack_t *temp;
-(void)inline;
+(void)nline;
 
 temp = *stack;
 while (temp)
