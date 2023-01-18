@@ -14,7 +14,6 @@ unsigned int i = 0;
 instruction_t ops[] = {
 {"push", push},
 {"pall", pall},
-		
 {NULL, NULL}
 };
 

@@ -14,7 +14,7 @@ meta_t *meta = NULL;
 line_t line;
 
 meta = malloc(sizeof(meta_t));
-if(!meta)
+if (!meta)
 {
 fprintf(stderr, "Error: malloc failed");
 exit(EXIT_FAILURE);
@@ -30,7 +30,7 @@ while (getline(&(meta->buf), &size, meta->file) != -1)
 {
 line.number++;
 processline(&line, meta->buf);
-if(line.content)
+if (line.content)
 get_op_func(line, meta)(&(meta->stack), line.number);
 }
 free(meta->buf);
@@ -70,5 +70,3 @@ token = strtok(NULL, " \n");
 line->content[i] = NULL;
 
 }
-
-
