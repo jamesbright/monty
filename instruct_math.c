@@ -12,7 +12,7 @@ void add(stack_t **stack, unsigned int nline)
 
 int tmp;
 
-if (stack == NULL || *stack == NULL || !((*stack)->next))
+if (stack == NULL || *stack == NULL)
 {
 fprintf(stderr, "L%d: can't add, stack too short", nline);
 exit(EXIT_FAILURE);
