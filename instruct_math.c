@@ -31,7 +31,7 @@ pop(stack, nline);
  * @nline: the line number
  * Return: Nothing.
  */
-void sub(stack_t **stack, unsigned int nline)
+void subop(stack_t **stack, unsigned int nline)
 {
 stack_t *temp;
 
@@ -83,7 +83,7 @@ free(temp);
  * @nline: the line number
  * Return: Nothing.
  */
-void mul(stack_t **stack, unsigned int nline)
+void mulop(stack_t **stack, unsigned int nline)
 {
 stack_t *temp;
 
@@ -106,7 +106,7 @@ free(temp);
  * @nline: the line number
  * Return: Nothing.
  */
-void mod(stack_t **stack, unsigned int nline)
+void modop(stack_t **stack, unsigned int nline)
 {
 stack_t *temp;
 
