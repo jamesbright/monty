@@ -122,9 +122,9 @@ void addqu(stack_t **stack, unsigned int nline);
 void addst(stack_t **stack, unsigned int nline);
 
 /* Math functions */
-void subop(stack_t **stack, unsigned int nline);
-void addop(stack_t **stack, unsigned int nline);
+void sub(stack_t **stack, unsigned int nline);
+void add(stack_t **stack, unsigned int nline);
 void divop(stack_t **stack, unsigned int nline);
-void mulop(stack_t **stack, unsigned int nline);
-void modop(stack_t **stack, unsigned int nline);
+void mul(stack_t **stack, unsigned int nline);
+void mod(stack_t **stack, unsigned int nline);
 #endif /* END _MONTY_H_ */

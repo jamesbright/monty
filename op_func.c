@@ -17,7 +17,8 @@ instruction_t ops[] = {
 {"pint", pint},
 {"pop", pop},
 {"swap", swap},
-{"nop",nop},
+{"nop", nop},
+{"add", add},
 {NULL, NULL}
 };
 
