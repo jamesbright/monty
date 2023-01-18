@@ -7,7 +7,7 @@
  * Return: void
  */
 
-void add(stack_t **stack, unsigned int nline)
+void addop(stack_t **stack, unsigned int nline)
 {
 
 int tmp;
