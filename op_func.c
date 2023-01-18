@@ -19,6 +19,10 @@ instruction_t ops[] = {
 {"swap", swap},
 {"nop", nop},
 {"add", add},
+{"sub", sub},
+{"mul", mul},
+{"divop", divop},
+{"mod", mod},
 {NULL, NULL}
 };
 
