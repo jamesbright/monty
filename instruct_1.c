@@ -47,18 +47,14 @@ if (*stack)
 
 void pall(stack_t **stack, unsigned int nline)
 {
+stack_t *temp;
+(void)inline;
 
-
-if (stack == NULL)
+temp = *stack;
+while (temp)
 {
-fprintf(stderr, "L%d: stack not found\n", nline);
-exit(EXIT_FAILURE);
-}
-
-while (*stack != NULL)
-{
-printf("%d\n", (*stack)->n);
-*stack = (*stack)->next;
+printf("%d\n", temp->n);
+temp = temp->next;
 }
 }
 
