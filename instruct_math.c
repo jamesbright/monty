@@ -18,11 +18,9 @@ fprintf(stderr, "L%d: can't add, stack too short", nline);
 exit(EXIT_FAILURE);
 }
 
-tmp = *stack;
-(*stack)->next->n = (*stack)->next->n + (*stack)->n;
-*stack = (*stack)->next;
-(*stack)->prev = NULL;
-free(tmp);
+tmp = (*stack)->n;
+pop(stack, line_number);
+(*stack)->n += tmp;
 }
 
 
