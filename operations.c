@@ -116,28 +116,17 @@ printf("%c\n", c);
  * @nline: the line number
  * Return: Nothing.
  */
-void pstr(stack_t **stack, unsigned int nline)
+void pstr(stack_t **stack, unsigned int nline __attribute__((unused)))
 {
-int idx = 0;
-char res[] = "";
-char c;
-stack_t *temp;
+stack_t *tmp;
 
-temp = *stack;
-(void)nline;
-
-
-while (temp)
+tmp = *stack;
+while (tmp != NULL)
 {
-if (temp->n == 0)
+if (tmp->n <= 0 || tmp->n > 127)
 break;
-if (_isalpha(temp->n) == 0)
-break;
-c = temp->n;
-printf("%c", c);
-res[idx] += c;
-temp = temp->next;
-idx++;
+printf("%c", tmp->n);
+tmp = tmp->next;
 }
 printf("\n");
 }
