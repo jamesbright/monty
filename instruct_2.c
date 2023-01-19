@@ -39,92 +39,47 @@ new_data->n = arg.arg;
 }
 
 /**
- * rotl - rotates the top element to bottom
- * then moves second top element to top
- * @stack: pointer to the head node pointer of stack
- * @nline: the line number
- * Return: Nothing.
+ * rotl - rotate the stack to the top
+ * @stack: stack
+ * @nline: line number in monty file
+ * Return: void
  */
-void rotl(stack_t **stack, unsigned int nline)
+void rotl(stack_t **stack, unsigned int nline __attribute__((unused)))
 {
-stack_t *temp;
-int top, second_top;
-(void)nline;
+int tmp;
+stack_t *ptr = *stack;
 
-if (stack == NULL || *stack == NULL)
+if (*stack == NULL)
+return;
+tmp = (*stack)->n;
+while (ptr->next != NULL)
 {
-nop(stack, nline);
+ptr->n = ptr->next->n;
+ptr = ptr->next;
 }
-
-top = (*stack)->n;
-temp = *stack;
-
-while (temp)
-{
-if (temp->next == NULL)
-break;
-temp = temp->next;
+ptr->n = tmp;
 }
-
-second_top = temp->n;
-(*stack)->n = second_top;
-temp->n = top;
-}
-
 /**
- * rotlop - rotates stack to left
- * @stack: pointer to the head node pointer of stack
- * @nline: the line number
- * Return: Nothing.
+ * rotr - rotate the stack to the top
+ * @stack: stack
+ * @nline: line number in monty file
+ * Return: void
  */
-void rotlop(stack_t **stack, unsigned int nline)
+void rotr(stack_t **stack, unsigned int nline __attribute__((unused)))
 {
-stack_t *last, *tmp;
+int tmp;
+stack_t *ptr = *stack;
 
-(void)nline;
-if (!stack || !(*stack) || !((*stack)->next))
+if (*stack == NULL)
 return;
 
-tmp = *stack;
-last = tmp;
-
-while (last->next)
+while (ptr->next != NULL)
+ptr = ptr->next;
+tmp = ptr->n;
+while (ptr->prev != NULL)
 {
-last = last->next;
+ptr->n = ptr->prev->n;
+ptr = ptr->prev;
 }
-
-last->next = tmp;
-tmp->prev = last;
-tmp->next->prev = NULL;
-*stack = tmp->next;
-tmp->next = NULL;
-}
-
-/**
- * rotrop - rotates stack to right
- * @stack: pointer to the head node pointer of stack
- * @nline: the line number
- * Return: Nothing.
- */
-void rotrop(stack_t **stack, unsigned int nline)
-{
-stack_t *last, *tmp;
-
-(void)nline;
-if (!stack || !(*stack) || !((*stack)->next))
-return;
-
-tmp = *stack;
-last = tmp;
-
-while (last->next)
-{
-last = last->next;
-}
-
-last->prev->next = NULL;
-last->prev = NULL;
-tmp->prev = last;
-last->next = tmp;
-*stack = last;
+ptr->n = tmp;
 }
