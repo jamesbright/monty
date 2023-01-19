@@ -24,6 +24,7 @@ instruction_t ops[] = {
 {"divop", divop},
 {"modop", modop},
 {"pchar", pchar},
+{"pstr", pstr},
 {NULL, NULL}
 };
 
