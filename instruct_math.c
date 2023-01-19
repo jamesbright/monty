@@ -56,21 +56,24 @@ free(temp);
  */
 void divop(stack_t **stack, unsigned int nline)
 {
-int tmp;
+stack_t *temp;
 
 if (*stack == NULL || (*stack)->next == NULL)
 {
 printf("L%u: can't div, stack too short\n", nline);
 exit(EXIT_FAILURE);
 }
-tmp = (*stack)->n;
-if (tmp == 0)
+temp = *stack;
+if (tmp->n == 0)
 {
 printf("L%u: division by zero\n", nline);
 exit(EXIT_FAILURE);
 }
-pop(stack, nline);
-(*stack)->n /= tmp;
+
+(*stack)->next->n /= (*stack)->n;
+*stack = (*stack)->next;
+(*stack)->prev = NULL;
+free(temp);
 }
 
 /**
