@@ -64,7 +64,7 @@ printf("L%u: can't div, stack too short\n", nline);
 exit(EXIT_FAILURE);
 }
 temp = *stack;
-if (tmp->n == 0)
+if (temp->n == 0)
 {
 printf("L%u: division by zero\n", nline);
 exit(EXIT_FAILURE);
