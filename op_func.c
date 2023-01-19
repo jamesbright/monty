@@ -25,6 +25,10 @@ instruction_t ops[] = {
 {"modop", modop},
 {"pchar", pchar},
 {"pstr", pstr},
+{"rotl", rotlop},
+{"rotr", rotrop},
+{"stack", addst},
+{"queue", addqu},
 {NULL, NULL}
 };
 

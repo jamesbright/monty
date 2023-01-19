@@ -125,7 +125,8 @@ stack_t *temp;
 
 temp = *stack;
 (void)nline;
-/* starts at the top */
+
+
 while (temp)
 {
 if (temp->n == 0)
